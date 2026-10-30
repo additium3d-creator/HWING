@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>H-WING · UAV 100 % MJF | Additium3D</title>
+<meta name="description" content="H-WING: un UAV completo diseñado y fabricado por Additium3D al 100 % en HP Multi Jet Fusion. Paredes de 0,5 mm, print-in-place, dos aeronaves por cuba y cinco iteraciones en seis semanas.">
+<meta name="theme-color" content="#0a0c0d">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://dronesmjf.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Additium3D">
+<meta property="og:title" content="H-WING · UAV 100 % MJF | Additium3D">
+<meta property="og:description" content="Un dron entero impreso en MJF: paredes de 0,5 mm, bisagras print-in-place y dos aeronaves por cuba. Aprende a diseñar drones 100 % MJF con nosotros.">
+<meta property="og:image" content="https://dronesmjf.com/og.jpg">
+<meta property="og:url" content="https://dronesmjf.com/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Additium3D","url":"https://additium3d.com","address":{"@type":"PostalAddress","addressLocality":"Beniparrell","addressRegion":"Valencia","addressCountry":"ES"},"description":"Fabricación aditiva industrial: series de piezas en HP Multi Jet Fusion (MJF) para drones y UAV."}</script>
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preload" href="assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/hero.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+<a class="skip" href="#cifras" data-i="skip">Saltar al contenido</a>
+
+<!-- ======================= NAV ======================= -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Additium3D · H-WING"><img src="assets/img/logo-full.webp" width="111" height="30" alt=""><b>H-WING</b></a>
+    <ul class="menu">
+      <li><a href="#montaje" data-i="nav.build">Cómo se hace</a></li>
+      <li><a href="#pared" data-i="nav.wall">Pared 0,5 mm</a></li>
+      <li><a href="#palancas" data-i="nav.levers">Qué se logra</a></li>
+      <li><a href="#ficha" data-i="nav.spec">Ficha técnica</a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn sm primary cta-link" href="https://calendly.com/additium3d/30min" target="_blank" rel="noopener"><span data-i="nav.cta">Reserva 30 min</span> <span class="arr" aria-hidden="true">→</span></a>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main id="top">
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="hero">
+  <div class="hero-stage" id="heroStage">
+    <img class="hero-img" src="assets/img/hero.webp" width="1448" height="1086" alt="Render del UAV H-WING de Additium3D" data-i-alt="hero.alt" fetchpriority="high">
+    <div class="hud" aria-hidden="true">
+      <svg viewBox="0 0 100 75" preserveAspectRatio="none">
+        <path class="ln" pathLength="1" style="--d:0s"   d="M20 8.6 L27 8.6 L40 27"/>
+        <path class="ln" pathLength="1" style="--d:.15s" d="M72 26.6 L67 26.6 L62 36"/>
+        <path class="ln" pathLength="1" style="--d:.3s"  d="M26 47.6 L33 47.6 L47 31.5"/>
+        <path class="ln" pathLength="1" style="--d:.45s" d="M66 5.6 L60 5.6 L55 15.75"/>
+        <circle class="dot" cx="40" cy="27" r=".7"/><circle class="dot" cx="62" cy="36" r=".7"/><circle class="dot" cx="47" cy="31.5" r=".7"/><circle class="dot" cx="55" cy="15.75" r=".7"/>
+      </svg>
+      <span class="hud-tag" data-n="01" style="left:6%;top:10%;--d:0s"  data-i="hud.1">PA12S · MJF</span>
+      <span class="hud-tag" data-n="02" style="left:72%;top:34%;--d:.15s" data-i="hud.2">Alas plegables</span>
+      <span class="hud-tag" data-n="03" style="left:9%;top:62%;--d:.3s"  data-i="hud.3">Pared 0,5 mm</span>
+      <span class="hud-tag" data-n="04" style="left:66%;top:5%;--d:.45s" data-i="hud.4">Aerodinámica CFD</span>
+    </div>
+    <span class="tag hero-render" data-i="render">Render conceptual</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow" data-i="hero.eyebrow">Additium3D · Demostrador tecnológico</p>
+      <h1 aria-label="H-WING">
+        <span class="l o" aria-hidden="true" style="--i:0"><span>H</span></span><span class="l o" aria-hidden="true" style="--i:1"><span>-</span></span><span class="l" aria-hidden="true" style="--i:2"><span>W</span></span><span class="l" aria-hidden="true" style="--i:3"><span>I</span></span><span class="l" aria-hidden="true" style="--i:4"><span>N</span></span><span class="l" aria-hidden="true" style="--i:5"><span>G</span></span>
+      </h1>
+      <p class="hero-sub" data-i="hero.sub">Un UAV completo, impreso al 100 % en MJF.</p>
+      <p class="hero-lede" data-i="hero.lede">Estructura, bisagras y alojamientos salen de la misma máquina. Dos aeronaves por cuba. Sin moldes ni utillaje.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#montaje"><span data-i="hero.cta1">Descubre cómo se hace</span> <span class="arr" aria-hidden="true">↓</span></a>
+        <a class="btn" href="https://calendly.com/additium3d/30min" target="_blank" rel="noopener"><span data-i="nav.cta">Reserva 30 min</span> <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>100 %</strong><span>MJF · PA12S</span></div>
+        <div><strong data-i="hero.s2n">0,5 mm</strong><span data-i="hero.s2">pared mínima</span></div>
+        <div><strong>2</strong><span data-i="hero.s3">aeronaves por cuba</span></div>
+        <div><strong data-i="hero.s4n">6 sem</strong><span data-i="hero.s4">del concepto al dron</span></div>
+      </div>
+    </div>
+    <div class="scrollcue" data-i="hero.scroll">Desliza</div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"><span data-i="ticker">100 % MJF · PA12S &nbsp;—&nbsp; Pared 0,5 mm &nbsp;—&nbsp; Print-in-place &nbsp;—&nbsp; 2 drones por cuba &nbsp;—&nbsp; 0 € de utillaje &nbsp;—&nbsp; 3–6 días por tanda &nbsp;—&nbsp; 5 iteraciones en 6 semanas &nbsp;—&nbsp;</span></div></div>
+
+<!-- ======================= CIFRAS ======================= -->
+<section class="sec" id="cifras">
+  <div class="wrap">
+    <div class="cif">
+    <div class="cif-head">
+      <div class="cif-copy">
+        <p class="eyebrow rv" data-i="c.eyebrow">01 · En cifras</p>
+        <h2 class="display h2 rv" data-i="c.title" style="--d:1">Un dron entero.<br><em>Una sola tecnología.</em></h2>
+        <p class="lede rv" data-i="c.lede" style="--d:2">Estructura, bisagras y alojamientos se imprimen juntos, sin moldes ni utillaje. En una sola cuba caben las piezas de dos aeronaves completas.</p>
+      </div>
+      <figure class="cif-fig rv" style="--d:2">
+      <img src="assets/img/cuba.webp" width="900" height="906" alt="Cuba de impresión del H-WING con las piezas de dos aeronaves completas" data-i-alt="c.cuba.alt" loading="lazy" decoding="async">
+      <figcaption data-i="c.cuba.cap"><b>2</b> aeronaves completas · una sola cuba</figcaption>
+    </figure>
+    </div>
+    <div class="nums">
+      <article class="num-card rv" style="--d:1">
+        <span class="k">MJF · PA12S</span>
+        <div class="big"><span data-count="100">100</span><small>%</small></div>
+        <p data-i="c.1">de la estructura, impresa en MJF con PA12S. Ninguna pieza estructural fabricada por otra vía.</p>
+      </article>
+      <article class="num-card rv" style="--d:2">
+        <span class="k" data-i="c.k2">Pared mínima</span>
+        <div class="big"><span data-count="0.5" data-dec="1">0,5</span><small>mm</small></div>
+        <p data-i="c.2">verificada en piezas que hemos fabricado y ensayado nosotros mismos.</p>
+      </article>
+      <article class="num-card rv" style="--d:3">
+        <span class="k" data-i="c.k3">Por ciclo de máquina</span>
+        <div class="big"><span data-count="2">2</span><small data-i="c.u3">drones</small></div>
+        <p data-i="c.3">aeronaves completas, con todas sus referencias, en una sola cuba de 380 × 284 × 380 mm.</p>
+      </article>
+      <article class="num-card rv" style="--d:4">
+        <span class="k" data-i="c.k4">Concepto → aeronave</span>
+        <div class="big"><span data-count="6">6</span><small data-i="c.u4">sem</small></div>
+        <p data-i="c.4">y cinco iteraciones hasta tener una aeronave completa fabricada y ensamblada.</p>
+      </article>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PRUEBA: FOTOS REALES ======================= -->
+<section class="sec" id="galeria" style="padding-block:0 clamp(16px,2.4vw,36px)">
+  <div class="wrap">
+    <p class="eyebrow rv" data-i="g.eyebrow">02 · Fabricado en nuestra planta</p>
+    <h2 class="display h2 rv" data-i="g.title" style="--d:1">Las piezas, <em>de verdad.</em></h2>
+    <p class="gal-hint rv" style="--d:2" data-i="g.hint">Pulsa para ampliar · desliza →</p>
+    <div class="gal rv" id="gal" style="--d:3" tabindex="-1">
+      <figure tabindex="0"><img src="assets/img/wing-root.webp" width="1100" height="1467" loading="lazy" alt="Raíz de ala y bisagras del H-WING" data-i-alt="g.a1"><span class="tag acc" data-i="g.made">Fabricado</span><figcaption data-i="g.c1">Raíz de ala y bisagras integradas</figcaption></figure>
+      <figure tabindex="0"><img src="assets/img/section-c.webp" width="1200" height="900" loading="lazy" alt="Sección de fuselaje impresa en MJF" data-i-alt="g.a2"><span class="tag acc" data-i="g.made">Fabricado</span><figcaption data-i="g.c2">Sección de fuselaje: vista de conjunto</figcaption></figure>
+      <figure tabindex="0"><img src="assets/img/section-a.webp" width="1200" height="1600" loading="lazy" alt="Interior de una sección de fuselaje con aligeramientos" data-i-alt="g.a3"><span class="tag acc" data-i="g.made">Fabricado</span><figcaption data-i="g.c4">Interior aligerado y nervado de una sección</figcaption></figure>
+      <figure tabindex="0"><img src="assets/img/stand-1.webp" width="1000" height="1452" loading="lazy" alt="H-WING expuesto en el stand de Additium3D" data-i-alt="g.a4"><span class="tag acc" data-i="g.made">Fabricado</span><figcaption data-i="g.c5">En nuestro stand de UNVEX</figcaption></figure>
+      <figure tabindex="0"><img src="assets/img/section-d.webp" width="1200" height="900" loading="lazy" alt="Interior de sección de fuselaje con alojamientos" data-i-alt="g.a5"><span class="tag acc" data-i="g.made">Fabricado</span><figcaption data-i="g.c6">Alojamientos y refuerzos integrados</figcaption></figure>
+      <figure tabindex="0"><img src="assets/img/section-b.webp" width="1000" height="1333" loading="lazy" alt="Sección de fuselaje con nervios internos" data-i-alt="g.a6"><span class="tag acc" data-i="g.made">Fabricado</span><figcaption data-i="g.c8">Nervios internos que sostienen la pared fina</figcaption></figure>
+      <figure tabindex="0"><img src="assets/img/stand-2.webp" width="1000" height="1333" loading="lazy" alt="H-WING en el stand de UNVEX" data-i-alt="g.a7"><span class="tag acc" data-i="g.made">Fabricado</span><figcaption data-i="g.c9">El H-WING, listo para enseñarse</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MONTAJE (animación automática) ======================= -->
+<section class="scrubwrap" id="montaje" data-scrub="mont">
+  <div class="stick">
+    <div class="wrap">
+      <div class="mont-grid">
+        <div class="mont-copy">
+          <p class="eyebrow" data-i="m.eyebrow">03 · De la cuba al dron</p>
+          <h2 class="display h2" data-i="m.title">Se diseña para MJF.<br><em>Se imprime.<br>Se monta.</em></h2>
+          <ol class="steps" id="steps">
+            <li class="on"><h3><i>01</i><span data-i="m.s1.t">Diseño</span></h3><p data-i="m.s1.d">Pensado desde el primer trazo para MJF: fuselaje en cuatro partes anidables, bisagras integradas y rigidización de carbono prevista.</p></li>
+            <li><h3><i>02</i><span data-i="m.s2.t">Impresión</span></h3><p data-i="m.s2.d">Dos aeronaves completas, con todas sus referencias, en una sola cuba de 380 × 284 × 380 mm. Un ciclo y cero utillaje.</p></li>
+            <li><h3><i>03</i><span data-i="m.s3.t">Montaje</span></h3><p data-i="m.s3.d">Las cuatro partes encajan, las bisagras ya vienen impresas en la pieza y la varilla de carbono entra en el alojamiento diseñado para ella.</p></li>
+            <li><h3><i>04</i><span data-i="m.s4.t">Despliegue</span></h3><p data-i="m.s4.d">Alas y empenaje plegables: un cilindro compacto para el canister y la configuración abierta al desplegar.</p></li>
+          </ol>
+        </div>
+
+        <div class="mont-vis frame" id="montVis" role="img" aria-label="Animación esquemática del montaje del H-WING" data-i-aria="m.aria">
+          <div class="vis-hud">
+            <div class="phs ph" id="phLabels">
+              <span class="on" data-i="m.v1">Fase 01 · Diseño CAD</span>
+              <span data-i="m.v2">Fase 02 · Cuba MJF</span>
+              <span data-i="m.v3">Fase 03 · Montaje</span>
+              <span data-i="m.v4">Fase 04 · Despliegue</span>
+            </div>
+            <span id="phNum">01 / 04</span>
+          </div>
+
+          <svg class="cad" id="cad" viewBox="0 0 960 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <g id="drone" transform="translate(50,10)">
+              <!-- axis -->
+              <path class="dim" d="M40 260 H830" stroke-dasharray="2 6"/>
+              <!-- sections -->
+              <g id="g0"><path class="shape" pathLength="1" d="M70 260 C108 226 168 214 210 214 L210 306 C168 306 108 294 70 260 Z"/><path class="joint" d="M210 202 V318"/></g>
+              <g id="g1">
+                <path class="shape" pathLength="1" d="M210 214 H540 V306 H210 Z"/><path class="joint" d="M540 202 V318"/>
+                <!-- wings (upper + mirrored lower) -->
+                <g id="wingU" transform="translate(456,214) rotate(88)"><path class="shape wing" pathLength="1" d="M-46 0 H0 L38 -185 H14 Z"/></g>
+                <g id="wingL" transform="translate(0,520) scale(1,-1) translate(456,214) rotate(88)"><path class="shape wing" pathLength="1" d="M-46 0 H0 L38 -185 H14 Z"/></g>
+                <circle id="hinge" cx="456" cy="214" r="6" fill="#1ec29b" opacity="0"/>
+              </g>
+              <g id="g2"><path class="shape" pathLength="1" d="M540 214 L690 226 V294 L540 306 Z"/><path class="joint" d="M690 202 V318"/></g>
+              <g id="g3">
+                <path class="shape" pathLength="1" d="M690 226 C728 232 758 246 780 258 V262 C758 274 728 288 690 294 Z"/>
+                <g id="stabU" transform="translate(736,236) rotate(88)"><path class="shape wing" pathLength="1" d="M-26 0 H0 L14 -78 H2 Z"/></g>
+                <g id="stabL" transform="translate(0,520) scale(1,-1) translate(736,236) rotate(88)"><path class="shape wing" pathLength="1" d="M-26 0 H0 L14 -78 H2 Z"/></g>
+              </g>
+              <!-- carbon rod -->
+              <path id="rod" class="rod" pathLength="1" d="M120 260 H770"/>
+              <!-- labels -->
+              <g id="labParts">
+                <text class="lab" x="76" y="190" data-i="svg.nose">01 · Morro</text>
+                <text class="lab" x="300" y="190" data-i="svg.mid">02 · Sección central</text>
+                <text class="lab" x="560" y="190" data-i="svg.rear">03 · Sección trasera</text>
+                <text class="lab" x="676" y="350" data-i="svg.tail">04 · Cono de cola</text>
+              </g>
+              <g id="labDeploy">
+                <path class="dim" d="M456 214 L330 176"/><text class="lab acc" x="190" y="170" data-i="svg.hinge">Bisagra impresa</text>
+                <path class="dim" d="M484 30 L540 22"/><text class="lab acc" x="546" y="25" data-i="svg.wing">Ala plegable</text>
+                <path class="dim" d="M640 260 L600 345"/><text class="lab acc" x="520" y="364" data-i="svg.rod">Varilla de carbono</text>
+              </g>
+            </g>
+          </svg>
+
+          <div class="cuba-wrap" id="cubaWrap">
+            <div class="cuba-box" id="cubaBox">
+              <img src="assets/img/cuba.webp" width="900" height="906" alt="Dos H-WING completos anidados en una cuba MJF" data-i-alt="m.cuba.alt" loading="lazy">
+              <div class="scan"></div>
+            </div>
+            <div class="cuba-info">
+              <b>2 ×<br>H-WING</b>
+              <span data-i="m.printing">Imprimiendo</span> <span class="pct" id="cubaPct">0 %</span><br>
+              380 × 284 × 380 mm
+            </div>
+          </div>
+          <div class="vis-foot"><span data-i="m.note">Esquema y animación ilustrativos</span><span>H-WING · MJF · PA12S</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PLEGADO ↔ DESPLEGADO ======================= -->
+<section class="sec" id="despliegue">
+  <div class="wrap">
+    <p class="eyebrow rv" data-i="d.eyebrow">04 · Plegado ↔ Desplegado</p>
+    <div class="dep-head">
+      <h2 class="display h2 rv" data-i="d.title" style="--d:1">De cilindro<br><em>a ala.</em></h2>
+      <p class="lede rv" data-i="d.lede" style="--d:2">Arrastra para abrir el H-WING: compacto para lanzarlo desde canister, completo cuando se despliega.</p>
+    </div>
+    <div class="dep-grid">
+      <div class="compare frame rv" id="compare" style="--d:1">
+        <img src="assets/img/folded.webp" width="1448" height="1086" alt="Render del H-WING plegado" data-i-alt="d.a1" loading="lazy">
+        <img class="top" src="assets/img/deployed.webp" width="1448" height="1086" alt="Render del H-WING desplegado" data-i-alt="d.a2" loading="lazy">
+        <div class="handle"><i>◂▸</i></div>
+        <span class="tag l" data-i="d.folded">Plegado</span>
+        <span class="tag r acc" data-i="d.deployed">Desplegado</span>
+        <span class="tag t" data-i="render">Render conceptual</span>
+        <input type="range" min="0" max="100" value="50" id="compareRange" aria-label="Plegado / Desplegado" data-i-aria="d.range">
+      </div>
+      <ul class="feat">
+        <li class="rv" style="--d:1"><span class="ic" style="grid-row:span 3">01</span><h3 class="h3" data-i="d.b1.t">Bisagras impresas en la pieza</h3><span class="nochip" data-i="d.b1.chip">Cero montaje</span><p data-i="d.b1.d">Alas, empenaje y alerones salen de la impresora ya montados y con el movimiento permitido: las bisagras se imprimen articuladas dentro de la propia pieza. No hay nada que ensamblar para que se muevan.</p></li>
+        <li class="rv" style="--d:2"><span class="ic">02</span><h3 class="h3" data-i="d.b2.t">Fuselaje cilíndrico</h3><p data-i="d.b2.d">Pensado para lanzamiento desde canister: las secciones de fuselaje se anidan en la cuba y se encajan después.</p></li>
+        <li class="rv" style="--d:3"><span class="ic">03</span><h3 class="h3" data-i="d.b3.t">Canister propio</h3><p data-i="d.b3.d">Lo imprimimos también nosotros, en FDM con ABS-GF, para validar el sistema completo y no solo la aeronave.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PARED 0,5 ======================= -->
+<section class="sec" id="pared" style="background:linear-gradient(var(--bg-2),var(--bg));border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="wall-grid">
+      <figure class="vid frame rv" style="margin:0">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/video/thin-wall-poster.jpg" aria-label="Pared fina impresa en MJF flexionada a mano" data-i-aria="w.vid.aria">
+          <source src="assets/video/thin-wall.webm" type="video/webm">
+          <source src="assets/video/thin-wall.mp4" type="video/mp4">
+        </video>
+        <span class="tag acc" data-i="g.made">Fabricado</span>
+        <figcaption data-i="w.video">Pared fina impresa en MJF: se flexiona con la mano</figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow rv" data-i="w.eyebrow">05 · Límite de pared</p>
+        <div class="bigmm rv" style="--d:1"><span data-count="0.5" data-dec="1">0,5</span><small>mm</small></div>
+        <h2 class="display h3 rv" style="--d:2;font-size:clamp(30px,4vw,56px);margin-top:6px" data-i="w.title">De pared. Estructura de verdad.</h2>
+        <p class="lede rv" style="--d:2" data-i="w.p1">El MJF nos deja bajar la pared hasta 0,5 mm en piezas que hemos fabricado y ensayado nosotros. Ahí es donde el polvo le gana peso a la fibra: estructura ligera sin laminado y sin molde.</p>
+        <p class="lede rv" style="--d:3;margin-top:14px" data-i="w.p2">La rigidez la ponen la geometría y una varilla de carbono alojada desde el diseño: la pared fina trabaja exactamente donde tiene que trabajar.</p>
+        <p class="lede rv" style="--d:3;margin-top:14px;font-size:.92em" data-i="w.p3">Es un terreno que la propia industria reconoce como especial: el fabricante de la tecnología publica recetas de proceso específicas para paredes de 0,3 a 0,9 mm.</p>
+        <div class="ruler rv" id="ruler" style="--d:3">
+          <div class="ruler-lab"><span data-i="w.scale">A escala real · 0 – 1,5 mm</span><span data-i="w.safe">Espesor mínimo seguro</span></div>
+          <div class="wrows">
+            <div class="wr acc" style="--t:.5;--k:0"><span class="wr-n" data-i="w.r.mjf">MJF · H-WING</span><div class="wr-l"><i class="wr-b"></i><b class="wr-v" data-i="w.r.mjf.v">0,5 mm</b></div></div>
+            <div class="wr" style="--t:.8;--k:1"><span class="wr-n" data-i="w.r.cmp">Composite (laminado de carbono)</span><div class="wr-l"><i class="wr-b"></i><b class="wr-v" data-i="w.r.cmp.v">0,8 mm</b></div></div>
+            <div class="wr" style="--t:1;--k:2"><span class="wr-n" data-i="w.r.inj">Inyección</span><div class="wr-l"><i class="wr-b"></i><b class="wr-v" data-i="w.r.inj.v">1,0 mm</b></div></div>
+          </div>
+          <svg viewBox="0 26 500 44" aria-hidden="true">
+            <line class="base" x1="0" y1="34" x2="500" y2="34"/>
+            <g id="rulerTicks"></g>
+          </svg>
+          <p class="wr-note" data-i="w.note">Valores orientativos de diseño seguro, no el límite absoluto de cada proceso: varían con el material y la geometría.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= POR QUÉ MJF ======================= -->
+<section class="sec" id="mjf">
+  <div class="wrap">
+    <p class="eyebrow rv" data-i="j.eyebrow">06 · Por qué MJF</p>
+    <h2 class="display h2 rv" data-i="j.title" style="--d:1">Un proceso que <em>fabrica lo que el diseño pide.</em></h2>
+    <p class="lede rv" data-i="j.lede" style="--d:2">HP Multi Jet Fusion funde el polvo capa a capa con agentes de impresión y calor. Sin soportes, sin molde y con propiedades casi iguales en los tres ejes.</p>
+    <div class="mjf-grid">
+      <div class="rv">
+        <div class="fusi" id="fusi">
+      <div class="fusi-copy">
+        <p class="fusi-tag" data-i="fu.tag">Vídeo · 1:11</p>
+        <h3 class="display fusi-title" data-i="fu.title">Fusi te lo cuenta <em>en un minuto.</em></h3>
+        <p class="fusi-text" data-i="fu.text">Fusi es la HP MJF 5620 de nuestra nave en Beniparrell. Mírala convertir polvo en piezas finales: extiende, dibuja, funde y repite.</p>
+      </div>
+      <div class="fusi-media">
+        <div class="frame fu-frame">
+          <div class="fu-player" id="fu-player">
+<svg id="fu-stage" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Fredoka, ui-rounded, sans-serif" role="img" aria-label="Animación: Fusi, la HP MJF 5620 de Additium3D, explica el proceso Multi Jet Fusion" data-i-aria="fu.aria">
+<defs>
+  <linearGradient id="fu-brand" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#1f46e0"/><stop offset="1" stop-color="#27cfb2"/></linearGradient>
+  <radialGradient id="fu-iris" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#6ff0d8"/><stop offset=".6" stop-color="#27a9c9"/><stop offset="1" stop-color="#1f46e0"/></radialGradient>
+  <linearGradient id="fu-wall" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#15223a"/><stop offset="1" stop-color="#2b4163"/></linearGradient>
+  <linearGradient id="fu-floor" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#434c5e"/><stop offset="1" stop-color="#2a303c"/></linearGradient>
+  <linearGradient id="fu-sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0b1d3a"/><stop offset=".55" stop-color="#1e5a82"/><stop offset="1" stop-color="#f0a56b"/></linearGradient>
+  <radialGradient id="fu-heatGlow"><stop offset="0" stop-color="#ffb067" stop-opacity=".95"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+  <radialGradient id="fu-spot" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#bfe6ff" stop-opacity=".22"/><stop offset="1" stop-color="#bfe6ff" stop-opacity="0"/></radialGradient>
+</defs>
+
+<!-- Nave -->
+<g id="fu-bgFactory">
+  <rect width="1280" height="720" fill="url(#fu-wall)"/>
+  <g id="fu-skylights"></g>
+  <polygon points="420,110 860,110 1040,500 240,500" fill="url(#fu-spot)" id="fu-spotlight"/>
+  <g id="fu-shelves"></g>
+  <rect y="500" width="1280" height="220" fill="url(#fu-floor)"/>
+  <rect y="500" width="1280" height="6" fill="#56607a"/>
+  <g stroke="#4d5669" stroke-width="2" opacity=".6">
+    <line x1="640" y1="506" x2="-200" y2="720"/><line x1="640" y1="506" x2="300" y2="720"/>
+    <line x1="640" y1="506" x2="980" y2="720"/><line x1="640" y1="506" x2="1480" y2="720"/>
+  </g>
+</g>
+
+<!-- Cielo (sectores) -->
+<g id="fu-sectors">
+  <rect width="1280" height="720" fill="url(#fu-sky)"/>
+  <circle cx="1010" cy="540" r="95" fill="#ffd39a" opacity=".85"/>
+  <path d="M0 560 Q180 470 380 540 T760 520 T1280 530 V720 H0Z" fill="#173556"/>
+  <path d="M0 610 Q260 540 520 600 T1000 590 T1280 600 V720 H0Z" fill="#10243f"/>
+  <polyline id="fu-trail" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="4" stroke-dasharray="10 12" stroke-linecap="round"/>
+  <g id="fu-labels"></g>
+  <g id="fu-drone">
+    <path d="M-86 -2 L-104 -40 L-84 -40 L-58 -8 Z" fill="#cfd8e6" stroke="#1b1f27" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="0" cy="0" rx="96" ry="17" fill="#eef2f7" stroke="#1b1f27" stroke-width="4"/>
+    <rect x="-40" y="-3" width="100" height="6" rx="3" fill="url(#fu-brand)"/>
+    <path d="M-30 4 L40 4 L10 34 L-22 34 Z" fill="#b7c3d4" stroke="#1b1f27" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="60" cy="-6" rx="16" ry="7" fill="#1b2a44"/>
+    <ellipse id="fu-prop" cx="-104" cy="0" rx="4" ry="24" fill="#1b1f27" opacity=".7"/>
+  </g>
+</g>
+
+<!-- Proceso MJF -->
+<g id="fu-process">
+  <rect x="460" y="30" width="780" height="520" rx="32" fill="#0c1628" stroke="url(#fu-brand)" stroke-width="4"/>
+  <text x="500" y="92" fill="#fff" font-size="34" font-weight="600">Así fabrico: Multi Jet Fusion</text>
+  <text id="fu-layerCount" x="1200" y="92" text-anchor="end" fill="#35d6b6" font-size="28" font-weight="600">Capa 1</text>
+  <g id="fu-steps"></g>
+  <rect x="560" y="200" width="560" height="330" fill="#15233a"/>
+  <g id="fu-layers"></g>
+  <path d="M560 200 V530 H1120 V200" fill="none" stroke="#8fa3c2" stroke-width="6" stroke-linejoin="round"/>
+  <g id="fu-drops"></g>
+  <g id="fu-rec">
+    <rect x="-5" y="-60" width="10" height="46" fill="#8fa3c2"/>
+    <ellipse cx="30" cy="-5" rx="20" ry="7" fill="#efe9dc"/>
+    <circle cx="0" cy="-14" r="14" fill="#d5dce7" stroke="#5b6a82" stroke-width="4"/>
+  </g>
+  <g id="fu-head">
+    <rect x="-8" y="-110" width="16" height="42" fill="#8fa3c2"/>
+    <rect x="-52" y="-72" width="104" height="42" rx="9" fill="#2e3a52" stroke="#35d6b6" stroke-width="3"/>
+    <g fill="#35d6b6"><rect x="-38" y="-32" width="8" height="5"/><rect x="-18" y="-32" width="8" height="5"/><rect x="2" y="-32" width="8" height="5"/><rect x="22" y="-32" width="8" height="5"/></g>
+  </g>
+  <g id="fu-lamp">
+    <ellipse cx="0" cy="-8" rx="110" ry="40" fill="url(#fu-heatGlow)"/>
+    <rect x="-8" y="-118" width="16" height="42" fill="#8fa3c2"/>
+    <rect x="-62" y="-80" width="124" height="30" rx="10" fill="#3b2a22" stroke="#ff8a3d" stroke-width="3"/>
+    <rect x="-50" y="-56" width="100" height="6" rx="3" fill="#ffc07a"/>
+  </g>
+</g>
+
+<!-- Unidad de fabricación -->
+<g id="fu-build">
+  <polygon points="820,90 1020,200 1020,420 820,310 620,420 620,200" fill="#1a2b47" opacity=".6"/>
+  <g stroke="#6f86ad" stroke-width="3" opacity=".5"><line x1="820" y1="310" x2="820" y2="90"/><line x1="820" y1="310" x2="620" y2="420"/><line x1="820" y1="310" x2="1020" y2="420"/></g>
+  <g id="fu-buildParts"></g>
+  <polygon id="fu-powderCover" points="820,90 1020,200 1020,420 820,530 620,420 620,200" fill="#efe9dc"/>
+  <g id="fu-particles"></g>
+  <polygon points="620,200 820,310 820,530 620,420" fill="#2d4a78" opacity=".18"/>
+  <polygon points="820,310 1020,200 1020,420 820,530" fill="#2d4a78" opacity=".28"/>
+  <g fill="none" stroke="url(#fu-brand)" stroke-width="5" stroke-linejoin="round">
+    <polygon points="820,90 1020,200 820,310 620,200"/>
+    <polyline points="620,200 620,420 820,530 1020,420 1020,200"/>
+    <line x1="820" y1="310" x2="820" y2="530"/>
+  </g>
+</g>
+
+<!-- Serie -->
+<g id="fu-series">
+  <text id="fu-serCount" x="1200" y="140" text-anchor="end" font-size="110" font-weight="700" fill="url(#fu-brand)">0</text>
+  <text x="1200" y="190" text-anchor="end" font-size="32" fill="#cfe0ff">piezas idénticas</text>
+  <g fill="#1b212b"><rect x="300" y="500" width="18" height="90"/><rect x="760" y="500" width="18" height="90"/><rect x="1220" y="500" width="18" height="90"/></g>
+  <rect x="250" y="470" width="1060" height="34" rx="17" fill="#20262f"/>
+  <line id="fu-belt" x1="262" y1="474" x2="1300" y2="474" stroke="#566077" stroke-width="6" stroke-dasharray="24 18"/>
+  <g id="fu-convParts"></g>
+  <text x="940" y="276" text-anchor="middle" font-size="22" fill="#cfe0ff">Control de calidad</text>
+  <rect x="880" y="300" width="120" height="172" rx="12" fill="none" stroke="#8fa3c2" stroke-width="10"/>
+  <circle id="fu-qcLight" cx="940" cy="300" r="14" fill="#1d4d33" stroke="#0f1a2e" stroke-width="3"/>
+</g>
+
+<!-- Final -->
+<g id="fu-final">
+  <rect width="1280" height="720" fill="#000"/>
+  <g id="fu-logoWrap"><image id="fu-logo" href="assets/img/fusi-logo.jpg" x="230" y="-79" width="820" height="580" style="mix-blend-mode:screen"/></g>
+  <text id="fu-f1" x="640" y="372" text-anchor="middle" font-size="40" font-weight="500" fill="#fff">Producción en serie con fabricación aditiva</text>
+  <text id="fu-f2" x="640" y="420" text-anchor="middle" font-size="28" fill="#9fb0c8">Beniparrell, Valencia</text>
+  <text id="fu-f3" x="640" y="498" text-anchor="middle" font-size="36" font-weight="600" fill="url(#fu-brand)">additium3d.com</text>
+  <text id="fu-f4" x="640" y="542" text-anchor="middle" font-size="26" fill="#cfd8e6">info@additium3d.com</text>
+</g>
+
+<!-- Fusi -->
+<g id="fu-fusi">
+  <ellipse id="fu-fShadow" cx="0" cy="0" rx="200" ry="16" fill="#000" opacity=".28"/>
+  <g id="fu-fusiBody">
+    <g id="fu-puffs" fill="#cfd6e2"><circle id="fu-pf0" r="10"/><circle id="fu-pf1" r="10"/><circle id="fu-pf2" r="10"/></g>
+    <rect x="-175" y="-24" width="46" height="24" rx="8" fill="#1f232b"/>
+    <rect x="120" y="-24" width="46" height="24" rx="8" fill="#1f232b"/>
+    <g id="fu-armL"><rect x="-72" y="-13" width="80" height="26" rx="13" fill="#dfe3ea" stroke="#1b1f27" stroke-width="5"/><circle cx="-80" cy="0" r="20" fill="#f3f5f8" stroke="#1b1f27" stroke-width="5"/></g>
+    <g id="fu-armR"><rect x="-8" y="-13" width="80" height="26" rx="13" fill="#dfe3ea" stroke="#1b1f27" stroke-width="5"/><circle cx="80" cy="0" r="20" fill="#f3f5f8" stroke="#1b1f27" stroke-width="5"/></g>
+    <rect x="-215" y="-300" width="430" height="282" rx="44" fill="#f3f5f8" stroke="#1b1f27" stroke-width="6"/>
+    <rect x="118" y="-288" width="86" height="258" rx="28" fill="#e2e6ec"/>
+    <rect x="150" y="-265" width="8" height="110" rx="4" fill="#c2c9d4"/>
+    <circle cx="161" cy="-100" r="22" fill="#f5c518"/><circle cx="161" cy="-100" r="14" fill="#e0312b"/>
+    <rect x="-152" y="-398" width="72" height="60" rx="12" fill="#2b303b" stroke="#1b1f27" stroke-width="6"/>
+    <rect x="-200" y="-345" width="400" height="62" rx="26" fill="#2b303b" stroke="#1b1f27" stroke-width="6"/>
+    <rect x="-30" y="-322" width="190" height="12" rx="6" fill="#171a21"/>
+    <rect x="-178" y="-272" width="276" height="128" rx="58" fill="#0f131b" stroke="#1b1f27" stroke-width="5"/>
+    <circle cx="-105" cy="-205" r="38" fill="#fff"/>
+    <g id="fu-pupL"><circle cx="-105" cy="-205" r="22" fill="url(#fu-iris)"/><circle cx="-105" cy="-205" r="11" fill="#0a0d14"/><circle cx="-97" cy="-213" r="6" fill="#fff"/></g>
+    <rect id="fu-lidL" x="-145" y="-245" width="80" height="0" fill="#0f131b"/>
+    <path id="fu-closeL" d="M-131 -203 Q-105 -186 -79 -203" stroke="#35d6b6" stroke-width="6" fill="none" stroke-linecap="round" opacity="0"/>
+    <circle cx="25" cy="-205" r="38" fill="#fff"/>
+    <g id="fu-pupR"><circle cx="25" cy="-205" r="22" fill="url(#fu-iris)"/><circle cx="25" cy="-205" r="11" fill="#0a0d14"/><circle cx="33" cy="-213" r="6" fill="#fff"/></g>
+    <rect id="fu-lidR" x="-15" y="-245" width="80" height="0" fill="#0f131b"/>
+    <path id="fu-closeR" d="M-1 -203 Q25 -186 51 -203" stroke="#35d6b6" stroke-width="6" fill="none" stroke-linecap="round" opacity="0"/>
+    <path id="fu-browL" d="M-128 -255 L-82 -255" stroke="#35d6b6" stroke-width="6" stroke-linecap="round"/>
+    <path id="fu-browR" d="M2 -255 L48 -255" stroke="#35d6b6" stroke-width="6" stroke-linecap="round"/>
+    <rect x="-190" y="-132" width="296" height="98" rx="18" fill="#e7eaf0" stroke="#cfd5de" stroke-width="3"/>
+    <path id="fu-mouth" fill="#1b1f27"/>
+    <ellipse cx="-160" cy="-120" rx="18" ry="11" fill="#ff8fa0" opacity=".45"/>
+    <ellipse cx="78" cy="-120" rx="18" ry="11" fill="#ff8fa0" opacity=".45"/>
+    <rect x="-102" y="-58" width="120" height="8" rx="4" fill="url(#fu-brand)"/>
+  </g>
+</g>
+
+<rect id="fu-dark" width="1280" height="720" fill="#02040a" opacity="0"/>
+<g id="fu-zzz" fill="#cfe0ff" font-weight="600"><text id="fu-z0">z</text><text id="fu-z1">z</text><text id="fu-z2">z</text></g>
+
+<g id="fu-bubble"><g id="fu-bInner">
+  <rect id="fu-bRect" rx="28" fill="#fff" stroke="#10192b" stroke-width="4"/>
+  <path id="fu-bTail" fill="#fff" stroke="#10192b" stroke-width="4" stroke-linejoin="round"/>
+  <rect id="fu-bPatch" fill="#fff"/>
+  <text id="fu-bText" text-anchor="middle" font-size="30" font-weight="500" fill="#10192b"></text>
+</g></g>
+</svg>
+            <div class="fu-caption off" id="fu-caption" aria-live="off"></div>
+            <div class="fu-overlay" id="fu-overlay"><button type="button" id="fu-bigPlay">Ver a Fusi</button></div>
+          </div>
+        </div>
+        <div class="fu-ctl">
+          <button type="button" id="fu-playBtn">Reproducir</button>
+          <input id="fu-scrub" type="range" min="0" max="71" step="0.01" value="0" aria-label="Posición del vídeo" data-i-aria="fu.scrub">
+          <span class="fu-time" id="fu-time">0:00 / 1:11</span>
+          <button type="button" id="fu-fsBtn" data-i="fu.fs">Ampliar</button>
+        </div>
+      </div>
+    </div>
+      </div>
+      <ol class="reasons">
+        <li class="rv" style="--d:1"><h3 class="h3" data-i="j.r1.t">Sin soportes</h3><p data-i="j.r1.d">Canales internos, celdas cerradas y conjuntos consolidados: el propio polvo sostiene la pieza mientras se imprime.</p></li>
+        <li class="rv" style="--d:2"><h3 class="h3" data-i="j.r2.t">Igual en X, Y y Z</h3><p data-i="j.r2.d">Casi sin dirección débil de capa. Es la condición para fiar estructura a la aditiva, y no solo carcasas.</p></li>
+        <li class="rv" style="--d:3"><h3 class="h3" data-i="j.r3.t">Superficie lista para montar</h3><p data-i="j.r3.d">Sin marcas de capa; se tinta, granalla o vaporiza sin retoques.</p></li>
+        <li class="rv" style="--d:4"><h3 class="h3" data-i="j.r4.t">Escalado predecible</h3><p data-i="j.r4.d">La pieza 1 y la 500 son iguales: ±0,25–0,45 mm en toda la cámara de 380 × 284 × 380 mm.</p></li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================= PALANCAS ======================= -->
+<section class="sec" id="palancas" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow rv" data-i="l.eyebrow">07 · Lo que se consigue</p>
+    <h2 class="display h2 rv" data-i="l.title" style="--d:1">Seis cosas que <em>ningún otro proceso</em> hace a la vez.</h2>
+    <div class="levers">
+      <article class="lever rv" style="--d:1">
+        <div class="n"><span>01</span><svg viewBox="0 0 32 32"><path d="M4 10h24M4 22h24M16 10v12M12 14l4-4 4 4M12 18l4 4 4-4"/></svg></div>
+        <div class="v"><span data-count="0.5" data-dec="1">0,5</span><small>mm</small></div>
+        <h3 class="h3" data-i="l.1.t">Paredes finísimas</h3>
+        <p data-i="l.1.d">Estructura ligera sin laminado ni molde, con la pared verificada en piezas nuestras.</p>
+      </article>
+      <article class="lever rv" style="--d:2">
+        <div class="n"><span>02</span><svg viewBox="0 0 32 32"><circle cx="11" cy="16" r="6"/><circle cx="21" cy="16" r="6"/><circle cx="16" cy="16" r="1.4"/></svg></div>
+        <div class="v"><span data-count="1">1</span><small data-i="l.2.u">pieza</small></div>
+        <h3 class="h3" data-i="l.2.t">Print-in-place</h3>
+        <p data-i="l.2.d">Una bisagra o un cierre que sale de la máquina ya montado y funcionando. Lo que era un conjunto es una sola referencia.</p>
+      </article>
+      <article class="lever rv" style="--d:3">
+        <div class="n"><span>03</span><svg viewBox="0 0 32 32"><path d="M6 24h20M10 24l-2-8h16l-2 8M16 6v10M12 12l4 4 4-4"/></svg></div>
+        <div class="v">−<span data-count="29">29</span><small>%</small></div>
+        <h3 class="h3" data-i="l.3.t">Pesos mínimos</h3>
+        <p data-i="l.3.d">Lattice, nervado isogrid y celdas internas. Gracias a MJF hay casos, como un kit UAV rediseñado con DfAM, en los que se han eliminado 425 g: el 29 % de su peso.</p>
+      </article>
+      <article class="lever rv" style="--d:1">
+        <div class="n"><span>04</span><svg viewBox="0 0 32 32"><path d="M4 22l12-6 12 6-12 6zM4 16l12-6 12 6M4 10l12-6 12 6"/></svg></div>
+        <div class="v">&gt;<span data-count="50">50</span><small data-i="l.4.u">kits / sem</small></div>
+        <h3 class="h3" data-i="l.4.t">Alta productividad</h3>
+        <p data-i="l.4.d">Dos aeronaves por cuba y producción continua 24/7. Duplicar la producción es añadir cubas, no comprar un molde.</p>
+      </article>
+      <article class="lever rv" style="--d:2">
+        <div class="n"><span>05</span><svg viewBox="0 0 32 32"><path d="M21 9a8 8 0 1 0 0 14M7 13h11M7 19h11"/></svg></div>
+        <div class="v"><span data-count="500">500</span><small>€</small></div>
+        <h3 class="h3" data-i="l.5.t">Bajo coste en serie</h3>
+        <p data-i="l.5.d">Juego completo de 25 referencias en PA12S (1,5 kg) y 0 € de utillaje. Precio de tanda de fabricación desde el primer pedido.</p>
+      </article>
+      <article class="lever rv" style="--d:3">
+        <div class="n"><span>06</span><svg viewBox="0 0 32 32"><path d="M26 16a10 10 0 1 1-3-7M26 5v5h-5"/></svg></div>
+        <div class="v">3–6<small data-i="l.6.u">días</small></div>
+        <h3 class="h3" data-i="l.6.t">Iteraciones rapidísimas</h3>
+        <p data-i="l.6.d">Una tanda en 3–6 días. El H-WING pasó por cinco iteraciones en seis semanas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ITERACIONES ======================= -->
+<section class="sec" id="iteraciones" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow rv" data-i="i.eyebrow">08 · Tiempo</p>
+    <h2 class="display h2 rv" data-i="i.title" style="--d:1">Equivócate diez veces <em>antes de la fecha.</em></h2>
+    <p class="lede rv" data-i="i.lede" style="--d:2">Un molde de inyección tarda de 4 a 6 meses en dar la primera pieza buena, y cada cambio de geometría pone el reloj a cero. En composite de carbono, cada cambio pide utillaje, laminado y curado nuevos: unos 50 días por vuelta. Una iteración nuestra —rediseño, impresión y ensayo— son quince días.</p>
+
+    <div class="race frame rv" id="race">
+      <div class="race-head">
+        <span class="tag acc" data-i="i.live">Simulación del calendario</span>
+        <div class="race-day"><span data-i="i.day">Día</span><b id="raceDay">0</b></div>
+      </div>
+      <div class="lane">
+        <div class="lane-lab"><span style="color:var(--warn)" data-i="i.mold">Molde de inyección</span><span data-i="i.mold.r">150 días hasta la primera pieza buena</span></div>
+        <div class="track"><div class="fill" id="moldFill"></div><div class="cursor" id="cur1"></div></div>
+      </div>
+      <div class="lane">
+        <div class="lane-lab"><span style="color:var(--text)" data-i="i.cf">Composite de carbono</span><span data-i="i.cf.r">3 iteraciones: utillaje, laminado y curado cada vez</span></div>
+        <div class="track cf" id="cfTrack"><div class="cursor" id="cur3"></div></div>
+      </div>
+      <div class="lane">
+        <div class="lane-lab"><span style="color:var(--accent)" data-i="i.am">Fabricación aditiva</span><span data-i="i.am.r">10 iteraciones en el mismo tiempo</span></div>
+        <div class="track am" id="amTrack"><div class="cursor" id="cur2"></div></div>
+        <div class="axis"><span>0</span><span>30</span><span>60</span><span>90</span><span>120</span><span data-i="i.axis">150 días</span></div>
+      </div>
+      <div class="race-foot">
+        <p><span data-i="i.note">H-WING: cinco iteraciones y una aeronave completa en seis semanas.</span><small data-i="i.foot">Valores medios; cada proyecto se presupuesta con su archivo real.</small></p>
+        <button class="btn sm" type="button" id="raceReplay"><span data-i="i.replay">Repetir</span> <span class="arr" aria-hidden="true">↻</span></button>
+      </div>
+    </div>
+
+    <div class="ml rv">
+      <div class="ml-copy">
+        <p class="tag acc" data-i="r.ml.tag">Dentro de cada tirada</p>
+        <h3 class="display h3" data-i="r.ml.t" style="font-size:clamp(26px,3vw,40px);margin:14px 0 12px">Cinco recetas, una sola tirada</h3>
+        <p data-i="r.ml.p">La tecnología permite dividir una tirada en franjas de altura y probar en cada una una configuración de proceso distinta: térmica, agentes, capa. Se comparan las piezas y se elige la mejor receta sin gastar cinco tiradas.</p>
+      </div>
+      <div class="ml-bands" aria-hidden="true">
+        <div class="ml-b b5"><span><i data-i="r.ml.l">Nivel</i> 5</span></div>
+        <div class="ml-b b4"><span><i data-i="r.ml.l">Nivel</i> 4</span></div>
+        <div class="ml-b b3"><span><i data-i="r.ml.l">Nivel</i> 3</span></div>
+        <div class="ml-b b2"><span><i data-i="r.ml.l">Nivel</i> 2</span></div>
+        <div class="ml-b b1"><span><i data-i="r.ml.l">Nivel</i> 1</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FRENTE A COMPOSITE ======================= -->
+<section class="sec" id="composite" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow rv" data-i="cx.eyebrow">09 · Frente a composite</p>
+    <h2 class="display h2 rv" data-i="cx.title" style="--d:1">Lo mejor del carbono, <em>más barato, más rápido y en serie.</em></h2>
+    <p class="lede rv" data-i="cx.lede" style="--d:2">No es MJF contra carbono. La fibra de carbono tiene una rigidez por kilo extraordinaria, y el H-WING la aprovecha. Cada material hace su trabajo.</p>
+    <p class="lede rv" data-i="cx.lede2" style="--d:3;margin-top:14px">El PA12 impreso en MJF da la forma y el soporte: cada componente tiene su alojamiento en el propio fuselaje. Las varillas de carbono dan la rigidez, y solo van donde hace falta. Sin moldes y sin laminado.</p>
+
+    <div class="cx frame rv" role="img" aria-label="Esquema: una piel de PA12 de 0,5 mm es flexible; con una varilla de carbono, la estructura es rígida" data-i-aria="cx.aria">
+      <div class="cx-cell">
+        <svg viewBox="0 10 240 90" aria-hidden="true">
+          <path class="cx-ghost" d="M20 70 H220"/>
+          <path class="cx-skin cx-flex" d="M20 70 Q120 70 220 70"/>
+          <circle class="cx-pin" cx="20" cy="70" r="4"/><circle class="cx-pin" cx="220" cy="70" r="4"/>
+          <text class="cx-t skin" x="20" y="96" data-i="cx.l.skin">PA12 · piel</text>
+        </svg>
+        <span class="cx-k sw-skin" data-i="cx.d1k">Piel · PA12 impreso en MJF</span>
+        <b data-i="cx.d1t">Piel de 0,5 mm</b>
+        <em class="cx-s" data-i="cx.d1s">Flexible</em>
+      </div>
+      <div class="cx-op" aria-hidden="true">+</div>
+      <div class="cx-cell">
+        <svg viewBox="0 10 240 90" aria-hidden="true">
+          <rect class="cx-rod" x="20" y="66" width="200" height="8" rx="4"/>
+          <text class="cx-t rod" x="20" y="96" data-i="cx.l.rod">Carbono · varilla</text>
+        </svg>
+        <span class="cx-k sw-rod" data-i="cx.d2k">Varilla · fibra de carbono</span>
+        <b data-i="cx.d2t">Varilla alojada</b>
+        <em class="cx-s" data-i="cx.d2s">Solo donde aporta rigidez</em>
+      </div>
+      <div class="cx-op" aria-hidden="true">=</div>
+      <div class="cx-cell">
+        <svg viewBox="0 10 240 90" aria-hidden="true">
+          <path class="cx-skin" d="M20 70 H220"/>
+          <rect class="cx-rod" x="20" y="66" width="200" height="8" rx="4"/>
+          <path class="cx-load" d="M120 18 V50 M110 40 L120 52 L130 40"/>
+          <circle class="cx-pin" cx="20" cy="70" r="4"/><circle class="cx-pin" cx="220" cy="70" r="4"/>
+          <text class="cx-t skin" x="20" y="90" data-i="cx.l.skin">PA12 · piel</text>
+          <text class="cx-t rod" x="20" y="102" data-i="cx.l.rod">Carbono · varilla</text>
+        </svg>
+        <span class="cx-k" data-i="cx.d3k">H-WING</span>
+        <b data-i="cx.d3t">Estructura montada</b>
+        <em class="cx-s acc" data-i="cx.d3s">Rígida</em>
+      </div>
+      <p class="cx-foot" data-i="cx.foot">Esquema ilustrativo.</p>
+    </div>
+
+    <div class="wx rv" id="wx" data-step="1" style="--d:1">
+      <p class="wx-head" data-i="wx.head">El ala, por partes</p>
+      <div class="wx-row">
+        <button type="button" class="wx-c c1" data-step="1" aria-pressed="true">
+          <span class="wx-tag"><i>1</i><em data-i="wx.1.tag">MJF · PA12</em></span>
+          <span class="wx-img"><img src="assets/img/wing-tramos.webp" width="688" height="320" alt="Ala del H-WING dividida en tres tramos de PA12 con las varillas de carbono entre ellos" data-i-alt="wx.1.alt" loading="lazy" decoding="async"></span>
+          <b class="wx-t" data-i="wx.1.t">Ala en tramos</b>
+          <span class="wx-d" data-i="wx.1.d">Piezas de piel en PA12 impresas en MJF divididas en secciones que caben en la máquina (hasta 0,5 mm de espesor).</span>
+          <span class="wx-bar"></span>
+        </button>
+        <span class="wx-op plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+        <button type="button" class="wx-c c2" data-step="2" aria-pressed="false">
+          <span class="wx-tag"><i>2</i><em data-i="wx.2.tag">Carbono</em></span>
+          <span class="wx-img"><img src="assets/img/wing-rods.webp" width="460" height="260" alt="Tres varillas de fibra de carbono de distinto diámetro" data-i-alt="wx.2.alt" loading="lazy" decoding="async"></span>
+          <b class="wx-t" data-i="wx.2.t">Larguero continuo</b>
+          <span class="wx-d" data-i="wx.2.d">Varillas de fibra de carbono que atraviesan y unen todos los tramos, aportando la rigidez principal.</span>
+          <span class="wx-bar"></span>
+        </button>
+        <span class="wx-op eq" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></svg></span>
+        <button type="button" class="wx-c c3" data-step="3" aria-pressed="false">
+          <span class="wx-tag"><i>3</i><em data-i="wx.3.tag">H-WING · Ala</em></span>
+          <span class="wx-img"><img src="assets/img/wing-armado.webp" width="758" height="315" alt="Ala del H-WING montada, con el larguero de carbono atravesando todos los tramos" data-i-alt="wx.3.alt" loading="lazy" decoding="async"></span>
+          <b class="wx-t" data-i="wx.3.t">Ala unida por partes</b>
+          <span class="wx-d" data-i="wx.3.d">Estructura ligera, rígida y modular, que combina la libertad de diseño del MJF con la resistencia del carbono.</span>
+          <span class="wx-bar"></span>
+        </button>
+      </div>
+      <p class="wx-cap" id="wxCap" aria-live="polite"></p>
+    </div>
+
+    <div class="levers">
+      <article class="lever rv" style="--d:1">
+        <div class="n"><span>01</span><svg viewBox="0 0 32 32"><path d="M5 5h10l12 12-10 10L5 15z"/><circle cx="11" cy="11" r="1.6"/></svg></div>
+        <div class="v"><span>2–3</span><small data-i="cx.1.u">× menos coste</small></div>
+        <h3 class="h3" data-i="cx.1.t">Precio</h3>
+        <p data-i="cx.1.d">Sin moldes que amortizar ni horas de laminado manual. Entre 2 y 3 veces menos coste por estructura en series cortas y medias. La primera unidad no necesita inversión previa.</p>
+      </article>
+      <article class="lever rv" style="--d:2">
+        <div class="n"><span>02</span><svg viewBox="0 0 32 32"><circle cx="16" cy="18" r="9"/><path d="M16 18l4-5M13 5h6"/></svg></div>
+        <div class="v"><span>&lt;10</span><small data-i="cx.2.u">min de montaje</small></div>
+        <h3 class="h3" data-i="cx.2.t">Velocidad de fabricación</h3>
+        <p data-i="cx.2.d">Del archivo a la aeronave en días, no en semanas de fabricar moldes. Dos drones completos por cuba y montaje en menos de 10 minutos.</p>
+      </article>
+      <article class="lever rv" style="--d:3">
+        <div class="n"><span>03</span><svg viewBox="0 0 32 32"><rect x="4" y="20" width="6" height="8"/><rect x="13" y="14" width="6" height="14"/><rect x="22" y="6" width="6" height="22"/></svg></div>
+        <div class="v"><span data-i="cx.3.v">Serie</span><small data-i="cx.3.u">real</small></div>
+        <h3 class="h3" data-i="cx.3.t">Capacidad de escalado</h3>
+        <p data-i="cx.3.d">Escalar un laminado exige más moldes y más mano de obra cualificada. En MJF bastan más ciclos de impresión, y cada unidad sale idéntica a la anterior.</p>
+      </article>
+      <article class="lever rv" style="--d:1">
+        <div class="n"><span>04</span><svg viewBox="0 0 32 32"><path d="M26 16a10 10 0 1 1-3-7M26 5v5h-5"/></svg></div>
+        <div class="v"><span>5</span><small data-i="cx.4.u">en 6 semanas</small></div>
+        <h3 class="h3" data-i="cx.4.t">Agilidad de iteración</h3>
+        <p data-i="cx.4.d">Cambiar el diseño es cambiar el archivo. El H-WING pasó por 5 iteraciones en 6 semanas hasta tener una aeronave completa, fabricada y montada. La pieza que se prueba es la que se fabrica en serie.</p>
+      </article>
+      <article class="lever rv" style="--d:2">
+        <div class="n"><span>05</span><svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="16"/><rect x="9" y="12" width="14" height="8"/><path d="M16 8v4"/></svg></div>
+        <div class="v"><span>0,5–0,7</span><small>mm</small></div>
+        <h3 class="h3" data-i="cx.5.t">Menos piezas, más funciones</h3>
+        <p data-i="cx.5.d">Montajes internos y alojamientos para cada componente, impresos en el propio fuselaje. Paredes de solo el material necesario y secciones anidadas: menos material, menos piezas y menos montaje.</p>
+      </article>
+      <article class="lever rv" style="--d:3">
+        <div class="n"><span>06</span><svg viewBox="0 0 32 32"><path d="M16 28V15"/><circle cx="16" cy="12" r="2.2"/><path d="M10.5 7.5a7.5 7.5 0 0 0 0 9M21.5 7.5a7.5 7.5 0 0 1 0 9M6.5 4.5a13 13 0 0 0 0 15M25.5 4.5a13 13 0 0 1 0 15"/></svg></div>
+        <div class="v"><span>RF</span><small data-i="cx.6.u">transparente</small></div>
+        <h3 class="h3" data-i="cx.6.t">Antenas integradas</h3>
+        <p data-i="cx.6.d">La fibra de carbono es conductora y bloquea la señal de radio. El PA12 es transparente a la radiofrecuencia: las antenas de GNSS, enlace de datos y vídeo van dentro del fuselaje, protegidas y sin penalizar la aerodinámica.</p>
+      </article>
+    </div>
+
+    <div class="cmp frame rv" role="table" aria-label="Comparativa H-WING y composite tradicional" data-i-aria="cx.cmp.aria">
+      <div class="cmp-head" role="row">
+        <div role="columnheader"></div>
+        <div class="cmp-a" role="columnheader" data-i="cx.c1">H-WING (MJF + carbono)</div>
+        <div class="cmp-b" role="columnheader" data-i="cx.c2">Composite tradicional</div>
+      </div>
+      <div class="cmp-row rv" role="row">
+        <div class="cmp-h" role="rowheader" data-i="cx.r1">Moldes y utillaje</div>
+        <div class="cmp-a" role="cell"><span class="cl" data-i="cx.c1">H-WING (MJF + carbono)</span><span data-i="cx.r1a">Sin moldes ni utillaje</span></div>
+        <div class="cmp-b" role="cell"><span class="cl" data-i="cx.c2">Composite tradicional</span><span data-i="cx.r1b">Moldes y utillaje de laminado</span></div>
+      </div>
+      <div class="cmp-row rv" role="row">
+        <div class="cmp-h" role="rowheader" data-i="cx.r2">Coste por estructura</div>
+        <div class="cmp-a" role="cell"><span class="cl" data-i="cx.c1">H-WING (MJF + carbono)</span><span data-i="cx.r2a">Entre 2 y 3 veces menos en series cortas y medias</span></div>
+        <div class="cmp-b" role="cell"><span class="cl" data-i="cx.c2">Composite tradicional</span><span data-i="cx.r2b">Coste de partida más alto en series cortas y medias</span></div>
+      </div>
+      <div class="cmp-row rv" role="row">
+        <div class="cmp-h" role="rowheader" data-i="cx.r3">Plazo hasta la primera aeronave</div>
+        <div class="cmp-a" role="cell"><span class="cl" data-i="cx.c1">H-WING (MJF + carbono)</span><span data-i="cx.r3a">Días: del archivo a la aeronave</span></div>
+        <div class="cmp-b" role="cell"><span class="cl" data-i="cx.c2">Composite tradicional</span><span data-i="cx.r3b">Semanas, con la fabricación de moldes incluida</span></div>
+      </div>
+      <div class="cmp-row rv" role="row">
+        <div class="cmp-h" role="rowheader" data-i="cx.r4">Cómo se escala</div>
+        <div class="cmp-a" role="cell"><span class="cl" data-i="cx.c1">H-WING (MJF + carbono)</span><span data-i="cx.r4a">Más ciclos de impresión; cada unidad, idéntica</span></div>
+        <div class="cmp-b" role="cell"><span class="cl" data-i="cx.c2">Composite tradicional</span><span data-i="cx.r4b">Más moldes y más mano de obra cualificada</span></div>
+      </div>
+      <div class="cmp-row rv" role="row">
+        <div class="cmp-h" role="rowheader" data-i="cx.r5">Coste de un cambio de diseño</div>
+        <div class="cmp-a" role="cell"><span class="cl" data-i="cx.c1">H-WING (MJF + carbono)</span><span data-i="cx.r5a">Cambiar el archivo</span></div>
+        <div class="cmp-b" role="cell"><span class="cl" data-i="cx.c2">Composite tradicional</span><span data-i="cx.r5b">Rehacer moldes</span></div>
+      </div>
+      <div class="cmp-row rv" role="row">
+        <div class="cmp-h" role="rowheader" data-i="cx.r6">Piezas y montaje</div>
+        <div class="cmp-a" role="cell"><span class="cl" data-i="cx.c1">H-WING (MJF + carbono)</span><span data-i="cx.r6a">Menos piezas: alojamientos y montajes impresos en el fuselaje</span></div>
+        <div class="cmp-b" role="cell"><span class="cl" data-i="cx.c2">Composite tradicional</span><span data-i="cx.r6b">Más piezas y montaje posterior</span></div>
+      </div>
+      <div class="cmp-row rv" role="row">
+        <div class="cmp-h" role="rowheader" data-i="cx.r7">Antenas</div>
+        <div class="cmp-a" role="cell"><span class="cl" data-i="cx.c1">H-WING (MJF + carbono)</span><span data-i="cx.r7a">Dentro del fuselaje: el PA12 es transparente a RF</span></div>
+        <div class="cmp-b" role="cell"><span class="cl" data-i="cx.c2">Composite tradicional</span><span data-i="cx.r7b">Fuera o con ventanas: el carbono bloquea la señal</span></div>
+      </div>
+    </div>
+
+    <div class="cx-close rv">
+      <p class="cx-quote" data-i="cx.quote">No es un dron más. Es lo que ocurre cuando se diseña pensando en cómo se va a fabricar desde el minuto uno.</p>
+      <p class="cx-sub" data-i="cx.sub">Esto mismo lo llevamos a proyectos en el aire, en tierra y en el mar.</p>
+      <a class="btn primary" href="https://calendly.com/additium3d/30min" target="_blank" rel="noopener"><span data-i="t.btn">Reserva 30 minutos</span> <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DISEÑAR PARA MJF ======================= -->
+<section class="sec" id="diseno" style="padding-top:0">
+  <div class="wrap">
+    <div class="dsum frame rv">
+      <div class="dsum-copy">
+        <p class="eyebrow" data-i="r.eyebrow">10 · Diseñar para MJF</p>
+        <h2 class="display h2" data-i="r.title">Diseñar para MJF es <em>pensar en la cuba desde el primer trazo.</em></h2>
+        <p class="lede" data-i="r.sum">Orientación, espesor y separación se deciden en el diseño. Nuestras reglas de cuba, pared fina y defectos, en una guía aparte.</p>
+        <a class="btn primary" href="diseno.html"><span data-i="r.sum.btn">Ver la guía de diseño</span> <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <ul class="dsum-list">
+        <li><b>01</b><span data-i="r.sum.1">La cuba</span><small data-i="r.sum.1d">Orientación y separación de las piezas.</small></li>
+        <li><b>02</b><span data-i="r.sum.2">Pared fina</span><small data-i="r.sum.2d">Calculadora de sensibilidad del peso.</small></li>
+        <li><b>03</b><span data-i="r.sum.3">Nueve defectos</span><small data-i="r.sum.3d">Cómo se evitan, uno a uno.</small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FICHA TÉCNICA ======================= -->
+<section class="sec" id="ficha" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow rv" data-i="f.eyebrow">11 · Ficha técnica</p>
+    <h2 class="display h2 rv" data-i="f.title" style="--d:1">H-WING <em>· datos</em></h2>
+    <dl class="spec">
+      <div class="row rv"><dt data-i="f.1l">Tipo</dt><dd data-i="f.1v">UAV de ala fija · demostrador tecnológico</dd></div>
+      <div class="row rv"><dt data-i="f.2l">Tecnología</dt><dd>HP Multi Jet Fusion (MJF)</dd></div>
+      <div class="row rv"><dt data-i="f.3l">Material</dt><dd>PA12S</dd></div>
+      <div class="row rv"><dt data-i="f.4l">Estructura</dt><dd class="acc" data-i="f.4v">100 % MJF</dd></div>
+      <div class="row rv"><dt data-i="f.5l">Pared mínima</dt><dd class="acc" data-i="f.5v">0,5 mm (verificada)</dd></div>
+      <div class="row rv"><dt data-i="f.6l">Rigidización</dt><dd data-i="f.6v">Varilla de carbono alojada desde el diseño</dd></div>
+      <div class="row rv"><dt data-i="f.7l">Fuselaje</dt><dd data-i="f.7v">Cilíndrico, para lanzamiento desde canister</dd></div>
+      <div class="row rv"><dt data-i="f.8l">Alas y empenaje</dt><dd data-i="f.8v">Plegables, con bisagras integradas</dd></div>
+      <div class="row rv"><dt data-i="f.9l">Cuba MJF</dt><dd>380 × 284 × 380 mm</dd></div>
+      <div class="row rv"><dt data-i="f.10l">Aeronaves por ciclo</dt><dd class="acc">2</dd></div>
+      <div class="row rv"><dt data-i="f.11l">Juego completo</dt><dd data-i="f.11v">25 referencias · 1,5 kg de PA12S</dd></div>
+      <div class="row rv"><dt data-i="f.12l">Coste en serie</dt><dd class="acc" data-i="f.12v">500 € por juego completo</dd></div>
+      <div class="row rv"><dt data-i="f.13l">Utillaje</dt><dd class="acc">0 €</dd></div>
+      <div class="row rv"><dt data-i="f.14l">Productividad</dt><dd data-i="f.14v">&gt; 50 kits / semana</dd></div>
+      <div class="row rv"><dt data-i="f.15l">Plazo por tanda</dt><dd data-i="f.15v">3–6 días</dd></div>
+      <div class="row rv"><dt data-i="f.16l">Desarrollo</dt><dd data-i="f.16v">6 semanas · 5 iteraciones</dd></div>
+      <div class="row rv"><dt data-i="f.17l">Aerodinámica</dt><dd data-i="f.17v">Validada por simulación CFD</dd></div>
+      <div class="row rv"><dt data-i="f.18l">Canister de lanzamiento</dt><dd data-i="f.18v">Propio · FDM · ABS-GF</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ======================= CTA ======================= -->
+<section class="cta" id="contacto">
+  <div class="wrap">
+    <div class="cta-body">
+      <p class="eyebrow rv" data-i="t.eyebrow">12 · Siguiente paso</p>
+      <h2 class="display rv" style="--d:1"><span data-i="t.t1">¿Quieres aprender a diseñar</span> <span class="o" data-i="t.t2">drones 100 % MJF?</span></h2>
+      <p class="rv" style="--d:2" data-i="t.p">Treinta minutos con nuestro equipo técnico: te enseñamos cómo pensamos el H-WING y cómo llevar tu diseño a MJF. Sin coste y sin compromiso.</p>
+      <div class="cta-mods rv" style="--d:3">
+        <span class="cm-l" data-i="t.mods">En esos 30 minutos vemos:</span>
+        <span class="cm" data-i="t.m1">Diseño para MJF</span><span class="cm" data-i="t.m2">Colocación en cuba</span><span class="cm" data-i="t.m3">Paredes finas</span><span class="cm" data-i="t.m4">Calibrado y postproceso</span>
+      </div>
+      <div class="cta-row rv" style="--d:3">
+        <a class="btn primary xl" href="https://calendly.com/additium3d/30min" target="_blank" rel="noopener"><span data-i="t.btn">Reserva 30 minutos</span> <span class="arr" aria-hidden="true">→</span></a>
+        <span class="cta-url">calendly.com/additium3d/30min</span>
+      </div>
+      <p class="cta-nda rv" style="--d:3" data-i="t.nda">NDA antes que nada: lo firmamos antes de ver tu primera especificación.</p>
+    </div>
+    <img class="cta-mark" src="assets/img/logo-mark.webp" width="813" height="564" alt="" aria-hidden="true" loading="lazy">
+    <div class="contact rv" style="--d:4">
+      <a href="mailto:info@additium3d.com"><span data-i="t.mail">Email</span>info@additium3d.com</a>
+      <a href="tel:+34689418439"><span data-i="t.tel">Teléfono</span>+34 689 418 439</a>
+      <a href="https://additium3d.com" target="_blank" rel="noopener"><span>Web</span>additium3d.com</a>
+      <a href="https://www.linkedin.com/company/additium-3d" target="_blank" rel="noopener"><span>LinkedIn</span>linkedin.com/company/additium-3d</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><img class="ft-logo" src="assets/img/logo-full.webp" width="120" height="33" alt="Additium3D" loading="lazy"><br><span data-i="ft.loc">Beniparrell · Valencia</span><br><span data-i="ft.rights">© 2026 Additium3D. Todos los derechos reservados.</span></div>
+    <small data-i="ft.tm">HP y Multi Jet Fusion son marcas de HP Development Company, L.P. Este sitio es independiente de HP.</small>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Galería">
+  <button class="lb-btn lb-x" type="button" id="lbX" aria-label="Cerrar">✕</button>
+  <button class="lb-btn lb-p" type="button" id="lbP" aria-label="Anterior">←</button>
+  <button class="lb-btn lb-n" type="button" id="lbN" aria-label="Siguiente">→</button>
+  <div class="lb-in"><img id="lbImg" alt=""></div>
+  <div class="lb-cap" id="lbCap"></div>
+</dialog>
+
+<noscript><style>.rv{opacity:1!important;transform:none!important}.hero h1 .l>span{transform:none!important}.hud-tag{opacity:1!important}.hud .ln{stroke-dashoffset:0!important}</style></noscript>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+<script src="js/fusi.js"></script>
+</body>
+</html>
