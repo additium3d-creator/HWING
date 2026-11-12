@@ -9,6 +9,18 @@
     "nav.levers": "What you get",
     "nav.spec": "Spec sheet",
     "nav.cta": "Book 30 min",
+    "nav.contact": "Contact",
+    "cf.h": "Or write to us and we'll reply within 24 working hours",
+    "cf.name": "Name",
+    "cf.company": "Company",
+    "cf.email": "Email",
+    "cf.how": "How did you find us? (optional)",
+    "cf.h0": "Choose an option", "cf.h1": "Formnext · HP stand", "cf.h2": "Defence trade show (FEINDEF or other)",
+    "cf.h3": "LinkedIn", "cf.h4": "Search engine (Google…)", "cf.h5": "Recommendation", "cf.h6": "Other",
+    "cf.msg": "What do you want to manufacture?",
+    "cf.msg.ph": "Tell us about your project: part, quantity, lead time…",
+    "cf.consent": "I agree to Additium3D processing my data to reply to this enquiry. <a href=\"privacidad.html\" target=\"_blank\" rel=\"noopener\">Privacy policy</a>.",
+    "cf.send": "Send message",
 
     "hero.alt": "Render of the Additium3D H-WING UAV",
     "hud.1": "PA12S · MJF",
@@ -394,6 +406,7 @@
 
     "ft.loc": "Beniparrell · Valencia, Spain",
     "ft.rights": "© 2026 Additium3D. All rights reserved.",
+    "ft.priv": "Privacy and cookies",
     "ft.tm": "HP and Multi Jet Fusion are trademarks of HP Development Company, L.P. This site is independent of HP."
   };
 
@@ -412,7 +425,7 @@
     en: { close: "Close", prev: "Previous", next: "Next", gal: "Gallery" }
   };
 
-  var ATTRS = [["data-i-alt", "alt", "esAlt"], ["data-i-aria", "aria-label", "esAria"]];
+  var ATTRS = [["data-i-alt", "alt", "esAlt"], ["data-i-aria", "aria-label", "esAria"], ["data-i-ph", "placeholder", "esPh"]];
 
   function collect() {
     document.querySelectorAll("[data-i]").forEach(function (el) {
@@ -427,6 +440,7 @@
 
   function apply(lang) {
     collect();
+    if (window.__hwEsTitle === undefined) { window.__hwEsTitle = document.title; var m0 = document.querySelector('meta[name="description"]'); window.__hwEsDesc = m0 ? m0.getAttribute("content") : ""; }
     var en = lang === "en";
     document.querySelectorAll("[data-i]").forEach(function (el) {
       var k = el.getAttribute("data-i");
@@ -439,9 +453,12 @@
       });
     });
     document.documentElement.lang = lang;
-    document.title = META[lang].title;
+    var H = document.documentElement;
+    var pT = H.getAttribute("data-t-" + lang), pD = H.getAttribute("data-d-" + lang);
+    if (lang === "es" && !pT && H.hasAttribute("data-t-en")) { pT = H.getAttribute("data-t-es") || window.__hwEsTitle; pD = H.getAttribute("data-d-es") || window.__hwEsDesc; }
+    document.title = pT || META[lang].title;
     var md = document.querySelector('meta[name="description"]');
-    if (md) md.setAttribute("content", META[lang].desc);
+    if (md) md.setAttribute("content", pD || META[lang].desc);
     ["og:title"].forEach(function (p) { var m = document.querySelector('meta[property="' + p + '"]'); if (m) m.setAttribute("content", META[lang].title); });
     var od = document.querySelector('meta[property="og:description"]');
     if (od) od.setAttribute("content", META[lang].desc);
@@ -465,8 +482,7 @@
     var s = null;
     try { s = localStorage.getItem("hwing-lang"); } catch (e) {}
     if (s === "en" || s === "es") return s;
-    var nav = (navigator.language || "es").toLowerCase();
-    return nav.indexOf("es") === 0 ? "es" : "en";
+    return "en"; // default language: English
   }
 
   window.I18N = {
@@ -483,7 +499,12 @@
     init: function () {
       collect();
       var l = detect();
-      if (l !== "es") apply(l); else { window.I18N.lang = "es"; }
+      if (l !== "es") apply(l); else {
+        window.I18N.lang = "es";
+        document.querySelectorAll(".lang button").forEach(function (b) {
+          b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === "es"));
+        });
+      }
       document.querySelectorAll(".lang button").forEach(function (b) {
         b.addEventListener("click", function () { window.I18N.set(b.getAttribute("data-lang")); });
       });

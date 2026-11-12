@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-t-en="Designing for MJF · Guide | H-WING · Additium3D" data-d-en="Additium3D's MJF design guide: nesting in the build, wall thickness, a sensitivity calculator and the most common defects and how to avoid them.">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -15,6 +15,8 @@
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="preload" href="assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+<script defer data-domain="dronesmjf.com" src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>
 </head>
 <body>
 <div class="ambient" aria-hidden="true"></div>
@@ -28,11 +30,12 @@
       <li><a href="#cuba" data-i="dp.nav.cuba">La cuba</a></li>
       <li><a href="#wcalc" data-i="dp.nav.wall">Pared fina</a></li>
       <li><a href="#defectos" data-i="dp.nav.def">Defectos</a></li>
+      <li><a href="#contacto" data-i="nav.contact">Contacto</a></li>
     </ul>
     <a class="back" href="index.html"><span aria-hidden="true">←</span> <span data-i="dp.back">El H-WING</span></a>
     <div class="lang" role="group" aria-label="Idioma / Language">
-      <button type="button" data-lang="es" aria-pressed="true">ES</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="en" aria-pressed="true" aria-label="English" title="English"><svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><clipPath id="fg1"><rect width="60" height="40"/></clipPath><g clip-path="url(#fg1)"><rect width="60" height="40" fill="#012169"/><path d="M0 0l60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0l60 40M60 0L0 40" stroke="#C8102E" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="7"/></g></svg><span>EN</span></button>
+      <button type="button" data-lang="es" aria-pressed="false" aria-label="Español" title="Español"><svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#AA151B"/><rect y="10" width="60" height="20" fill="#F1BF00"/></svg><span>ES</span></button>
     </div>
     <a class="btn sm primary cta-link" href="https://calendly.com/additium3d/30min" target="_blank" rel="noopener"><span data-i="nav.cta">Reserva 30 min</span> <span class="arr" aria-hidden="true">→</span></a>
   </div>
@@ -239,6 +242,25 @@
         <span class="cta-url">calendly.com/additium3d/30min</span>
       </div>
       <p class="cta-nda rv" style="--d:3" data-i="t.nda">NDA antes que nada: lo firmamos antes de ver tu primera especificación.</p>
+      <form class="cform rv" id="cform" style="--d:3" action="https://formsubmit.co/info@additium3d.com" method="POST" novalidate>
+        <p class="cf-h" data-i="cf.h">O escríbenos y te respondemos en 24 h laborables</p>
+        <div class="cf-grid">
+          <label class="cf-f"><span data-i="cf.name">Nombre</span><input type="text" name="name" autocomplete="name" required></label>
+          <label class="cf-f"><span data-i="cf.company">Empresa</span><input type="text" name="company" autocomplete="organization"></label>
+          <label class="cf-f cf-w"><span data-i="cf.email">Email</span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="cf-f cf-w"><span data-i="cf.how">¿Cómo nos has conocido? (opcional)</span><select name="how" id="cfHow"><option value="" data-i="cf.h0">Elige una opción</option><option value="formnext" data-i="cf.h1">Formnext · stand de HP</option><option value="feria-defensa" data-i="cf.h2">Feria de defensa (FEINDEF u otra)</option><option value="linkedin" data-i="cf.h3">LinkedIn</option><option value="google" data-i="cf.h4">Buscador (Google…)</option><option value="recomendacion" data-i="cf.h5">Recomendación</option><option value="otro" data-i="cf.h6">Otro</option></select></label>
+          <label class="cf-f cf-w"><span data-i="cf.msg">¿Qué quieres fabricar?</span><textarea name="message" rows="4" required data-i-ph="cf.msg.ph" placeholder="Cuéntanos tu proyecto: pieza, cantidad, plazo…"></textarea></label>
+        </div>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+        <input type="hidden" name="_subject" value="Nueva consulta · dronesmjf.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <label class="cf-c"><input type="checkbox" name="consent" required><span data-i="cf.consent">Acepto que Additium3D trate mis datos para responder a esta consulta. <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a>.</span></label>
+        <div class="cf-row">
+          <button class="btn primary" type="submit"><span data-i="cf.send">Enviar mensaje</span> <span class="arr" aria-hidden="true">→</span></button>
+          <span class="cf-st" id="cfStatus" role="status" aria-live="polite"></span>
+        </div>
+      </form>
     </div>
     <img class="cta-mark" src="assets/img/logo-mark.webp" width="813" height="564" alt="" aria-hidden="true" loading="lazy">
     <div class="contact rv" style="--d:4">
@@ -254,7 +276,7 @@
 
 <footer>
   <div class="wrap">
-    <div><img class="ft-logo" src="assets/img/logo-full.webp" width="120" height="33" alt="Additium3D" loading="lazy"><br><span data-i="ft.loc">Beniparrell · Valencia</span><br><span data-i="ft.rights">© 2026 Additium3D. Todos los derechos reservados.</span></div>
+    <div><img class="ft-logo" src="assets/img/logo-full.webp" width="120" height="33" alt="Additium3D" loading="lazy"><br><span data-i="ft.loc">Beniparrell · Valencia</span><br><span data-i="ft.rights">© 2026 Additium3D. Todos los derechos reservados.</span><br><a class="ft-priv" href="privacidad.html" data-i="ft.priv">Privacidad y cookies</a></div>
     <small data-i="ft.tm">HP y Multi Jet Fusion son marcas de HP Development Company, L.P. Este sitio es independiente de HP.</small>
   </div>
 </footer>
@@ -270,5 +292,9 @@
 <noscript><style>.rv{opacity:1!important;transform:none!important}.hero h1 .l>span{transform:none!important}.hud-tag{opacity:1!important}.hud .ln{stroke-dashoffset:0!important}</style></noscript>
 <script src="js/i18n.js"></script>
 <script src="js/app.js"></script>
+<script src="js/track.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/nda-text.js"></script>
+<script src="js/gate.js"></script>
 </body>
 </html>
